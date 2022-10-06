@@ -1,5 +1,6 @@
 # import flask | redirect user to a web page | url_for is used for creating a URL to prevent the overhead of having to change URLs 
 # throughout the application (including in templates)
+from fileinput import filename
 from os import abort
 from flask import Flask, redirect, url_for
 app = Flask(__name__)
@@ -32,6 +33,14 @@ def private():
 @app.route('/login')
 def login():
     return "Now we would get username & password" # This is the login page
+
+# static image example
+@app.route('/static-example/img')
+def static_example_img():
+    start = '<img src="'
+    url = url_for('static', filename = 'vmask.jpg')
+    end = '">'
+    return start + url + end, 200
 
 # In this line the abort function is used which
 # immediately causes an error to occur resulting in the corresponding errorhandler being
