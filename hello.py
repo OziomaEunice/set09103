@@ -1,5 +1,6 @@
 # import flask | redirect user to a web page | url_for is used for creating a URL to prevent the overhead of having to change URLs 
 # throughout the application (including in templates)
+from os import abort
 from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
@@ -31,6 +32,13 @@ def private():
 @app.route('/login')
 def login():
     return "Now we would get username & password" # This is the login page
+
+# In this line the abort function is used which
+# immediately causes an error to occur resulting in the corresponding errorhandler being
+# called.
+@app.route('/force404')
+def force404():
+    abort(404)
 
 # Create a (custom) error message when a page is not found
 @app.errorhandler(404)
