@@ -17,7 +17,7 @@ def hello2(name):
 
 @app.route("/goodbye/")
 def goodbye():
-    return "Goodbye cruel world  :("
+    return "Goodbye cruel world  :("  #This will show up in the webpage (in the address code/goodbye/)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
