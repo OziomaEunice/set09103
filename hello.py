@@ -1,4 +1,6 @@
-from flask import Flask
+# import flask | redirect user to a web page | url_for is used for creating a URL to prevent the overhead of having to change URLs 
+# throughout the application (including in templates)
+from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
 @app.route('/')
@@ -18,6 +20,17 @@ def hello2(name):
 @app.route("/goodbye/")
 def goodbye():
     return "Goodbye cruel world  :("  #This will show up in the webpage (in the address code/goodbye/)
+
+
+@app.route("/private")
+def private():
+    # Test for user logged in failed
+    # so redirect to login URL
+    return redirect(url_for('login')) 
+
+@app.route('/login')
+def login():
+    return "Now we would get username & password" # This is the login page
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
