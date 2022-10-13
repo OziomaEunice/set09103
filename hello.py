@@ -79,7 +79,7 @@ def add(first, second):
     return str(first + second)
 
 # 
-@app.route("/hello/")
+@app.route("/hello1/")
 def hello3():
     name = request.args.get('name', '')
     if name == '':
