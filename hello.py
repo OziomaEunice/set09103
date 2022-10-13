@@ -2,8 +2,7 @@
 # throughout the application (including in templates)
 from fileinput import filename
 from os import abort
-from urllib import request
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, request
 app = Flask(__name__)
 
 @app.route('/')
