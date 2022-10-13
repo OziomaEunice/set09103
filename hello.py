@@ -56,8 +56,6 @@ def page_not_found(error):
     return "Couldn't find the page you requested", 404
 
 
-print (request.method, request.path, request.form)
-
 @app.route("/account/", methods = ['GET', 'POST'])
 def account():
     if request.method == 'POST':
