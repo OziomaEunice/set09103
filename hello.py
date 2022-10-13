@@ -70,7 +70,7 @@ def account():
              <input type = "submit" name = "submit" id = "submit"/>
             </form>
             </body></html>'''
-    
-
+            
+        return page
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
