@@ -69,7 +69,7 @@ def account():
              <input type = "text" name = "name" id = "name"/>
              <input type = "submit" name = "submit" id = "submit"/>
             </form>
-            </body><html>'''
+            </body></html>'''
     
 
 if __name__ == "__main__":
