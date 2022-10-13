@@ -72,5 +72,12 @@ def account():
             </body></html>'''
             
         return page
+    
+# URL variables
+@app.route("/add/<int:first>/<int:second>")
+def add(first, second):
+    return str(first + second)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
