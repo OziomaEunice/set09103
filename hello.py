@@ -2,6 +2,7 @@
 # throughout the application (including in templates)
 from fileinput import filename
 from os import abort
+from urllib import request
 from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
@@ -53,6 +54,17 @@ def force404():
 @app.errorhandler(404)
 def page_not_found(error):
     return "Couldn't find the page you requested", 404
+
+
+print (request.method, request.path, request.form)
+
+@app.route("/account/", methods = ['GET', 'POST'])
+def account():
+    if request.method == 'POST':
+        return "POST'ed to /account root\n"
+    else:
+        return "GET /account root"
+    
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
