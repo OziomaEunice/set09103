@@ -2,6 +2,7 @@
 # throughout the application (including in templates)
 from fileinput import filename
 from os import abort
+from tkinter.font import names
 from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
 
@@ -100,6 +101,12 @@ def hello4(name = None):
 def hello5(name = None):
     user = {'name': name}
     return render_template('conditional.html', name = name)
+
+# using loops.html file
+@app.route('/users/')
+def users():
+    name = ['Simon','Thomas','Lee','Jamie','Sylvester']
+    return render_template('loops.html', name = names)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
