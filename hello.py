@@ -105,7 +105,7 @@ def hello5(name = None):
 # using loops.html file
 @app.route('/users/')
 def users():
-    name = ['Simon','Thomas','Lee','Jamie','Sylvester']
+    names = ['Simon','Thomas','Lee','Jamie','Sylvester']
     return render_template('loops.html', names = names)
 
 if __name__ == "__main__":
