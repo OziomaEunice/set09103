@@ -106,7 +106,7 @@ def hello5(name = None):
 @app.route('/users/')
 def users():
     name = ['Simon','Thomas','Lee','Jamie','Sylvester']
-    return render_template('loops.html', name = names)
+    return render_template('loops.html', names = names)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
