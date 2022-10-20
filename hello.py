@@ -118,7 +118,7 @@ def inherits():
 def inherits_one():
     return render_template('inherits1.html')
 
-@app.route('/inherits/two')
+@app.route('/inherits/two/')
 def inherits_two():
     return render_template('inherits2.html')
 
