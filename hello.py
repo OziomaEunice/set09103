@@ -2,9 +2,8 @@
 # throughout the application (including in templates)
 from fileinput import filename
 from os import abort
-import tkinter
 #from tkinter.font import names
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, redirect, url_for, request, render_template, tkinter
 app = Flask(__name__)
 
 @app.route('/')
