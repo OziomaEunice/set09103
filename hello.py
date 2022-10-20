@@ -87,11 +87,18 @@ def hello3():
     else:
         return "Hello %s" % name
 
-# using html file
+# using hello.html file
 @app.route('/hello2/<name>')
 def hello4(name = None):
     user = {'name': name}
     return render_template('hello.html', user = user)
+
+
+# using conditional.html file
+@app.route('/hello3/<name>')
+def hello5(name = None):
+    user = {'name': name}
+    return render_template('conditional.html', name = name)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
