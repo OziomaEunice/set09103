@@ -88,7 +88,7 @@ def hello3():
         return "Hello %s" % name
 
 # using html file
-@app.route('/hello/<name>')
+@app.route('/hello2/<name>')
 def hello4(name = None):
     user = {'name': name}
     return render_template('hello.html', user = user)
