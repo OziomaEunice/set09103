@@ -95,6 +95,7 @@ def hello4(name = None):
 
 
 # using conditional.html file
+@app.route('/hello3/')
 @app.route('/hello3/<name>')
 def hello5(name = None):
     user = {'name': name}
