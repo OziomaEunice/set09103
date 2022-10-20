@@ -2,7 +2,7 @@
 # throughout the application (including in templates)
 from fileinput import filename
 from os import abort
-from flask import Flask, redirect, url_for, request
+from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
 
 @app.route('/')
@@ -78,7 +78,7 @@ def account():
 def add(first, second):
     return str(first + second)
 
-# 
+# another hello
 @app.route("/hello1/")
 def hello3():
     name = request.args.get('name', '')
@@ -86,6 +86,12 @@ def hello3():
         return "no param supplied"
     else:
         return "Hello %s" % name
+
+# using html file
+@app.route('/hello/<name>')
+def hello2(name = None):
+    user = {'name': name}
+    return render_template('hello.html', user = user)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
