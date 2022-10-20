@@ -2,7 +2,8 @@
 # throughout the application (including in templates)
 from fileinput import filename
 from os import abort
-from tkinter.font import names
+import tkinter
+#from tkinter.font import names
 from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
 
