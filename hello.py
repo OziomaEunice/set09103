@@ -89,7 +89,7 @@ def hello3():
 
 # using html file
 @app.route('/hello/<name>')
-def hello2(name = None):
+def hello4(name = None):
     user = {'name': name}
     return render_template('hello.html', user = user)
 
